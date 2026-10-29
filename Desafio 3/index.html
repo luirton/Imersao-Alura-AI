@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Minha Lista de Tarefas</title>
+  <!-- Arquivo de estilização (CSS) -->
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <main class="app-container">
+    <header class="app-header">
+      <h1>Minha Lista de Tarefas</h1>
+      <p class="subtitle">Organize seu dia a dia de forma simples</p>
+    </header>
+
+    <!-- Formulário para adicionar nova tarefa -->
+    <form id="todo-form" class="todo-form">
+      <input 
+        type="text" 
+        id="task-input" 
+        placeholder="O que você precisa fazer?" 
+        autocomplete="off"
+        required
+      />
+      <button type="submit" id="add-btn">Adicionar</button>
+    </form>
+
+    <!-- Barra de progresso e estatísticas -->
+    <div class="stats-bar">
+      <span id="task-count">0 tarefas pendentes</span>
+      <button id="clear-completed" class="btn-secondary" title="Limpar todas as tarefas concluídas">
+        Limpar concluídas
+      </button>
+    </div>
+
+    <!-- Lista onde os itens de tarefas serão inseridos dinamicamente pelo JavaScript -->
+    <ul id="task-list" class="task-list">
+      <!-- As tarefas aparecerão aqui -->
+    </ul>
+
+    <!-- Mensagem exibida caso a lista esteja vazia -->
+    <div id="empty-state" class="empty-state">
+      <p>Nenhuma tarefa no momento. Aproveite para relaxar ou adicione uma nova acima!</p>
+    </div>
+  </main>
+
+  <!-- Arquivo de lógica da aplicação (JavaScript) -->
+  <script src="app.js"></script>
+</body>
+</html>
