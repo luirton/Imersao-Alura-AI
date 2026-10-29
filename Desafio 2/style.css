@@ -1,0 +1,183 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+}
+
+body {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: radial-gradient(circle at top right, #1e1e38, #0f0f1a);
+  color: #f1f5f9;
+  padding: 1.5rem;
+}
+
+.calculator-container {
+  width: 100%;
+  max-width: 380px;
+}
+
+.calculator {
+  background: rgba(30, 32, 48, 0.85);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 28px;
+  padding: 24px;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4),
+              0 0 50px rgba(99, 102, 241, 0.1);
+}
+
+.calculator-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+
+.calculator-header h1 {
+  font-size: 1.1rem;
+  font-weight: 500;
+  color: #94a3b8;
+}
+
+.badge {
+  font-size: 0.75rem;
+  font-weight: 600;
+  background: rgba(99, 102, 241, 0.2);
+  color: #818cf8;
+  padding: 4px 10px;
+  border-radius: 12px;
+  border: 1px solid rgba(99, 102, 241, 0.3);
+}
+
+.display-container {
+  background: #111322;
+  border-radius: 18px;
+  padding: 18px 20px;
+  min-height: 100px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: flex-end;
+  word-break: break-all;
+  border: 1px solid rgba(255, 255, 255, 0.04);
+  margin-bottom: 24px;
+  box-shadow: inset 0 2px 6px rgba(0, 0, 0, 0.5);
+}
+
+.previous-operand {
+  font-size: 0.95rem;
+  color: #64748b;
+  min-height: 24px;
+  font-weight: 400;
+}
+
+.current-operand {
+  font-size: 2.4rem;
+  font-weight: 600;
+  color: #ffffff;
+  letter-spacing: -0.5px;
+  line-height: 1.2;
+  transition: all 0.15s ease;
+}
+
+.keypad {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 12px;
+}
+
+.btn {
+  aspect-ratio: 1;
+  border: none;
+  border-radius: 16px;
+  font-size: 1.25rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.15s cubic-bezier(0.4, 0, 0.2, 1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  user-select: none;
+}
+
+.btn:active {
+  transform: scale(0.94);
+}
+
+/* Números */
+.btn-number {
+  background: #24273d;
+  color: #e2e8f0;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.btn-number:hover {
+  background: #2d314d;
+  color: #ffffff;
+}
+
+/* Funções (AC, DEL, %, ±) */
+.btn-function {
+  background: #1b1e33;
+  color: #94a3b8;
+  font-weight: 600;
+  font-size: 1.1rem;
+}
+
+.btn-function:hover {
+  background: #232742;
+  color: #e2e8f0;
+}
+
+/* Operadores (+, -, ×, ÷) */
+.btn-operator {
+  background: rgba(99, 102, 241, 0.15);
+  color: #818cf8;
+  font-size: 1.5rem;
+  font-weight: 600;
+  border: 1px solid rgba(99, 102, 241, 0.25);
+}
+
+.btn-operator:hover {
+  background: rgba(99, 102, 241, 0.25);
+  color: #a5b4fc;
+}
+
+/* Botão Igual (=) */
+.btn-equals {
+  background: linear-gradient(135deg, #6366f1, #4f46e5);
+  color: #ffffff;
+  font-size: 1.6rem;
+  font-weight: 600;
+  box-shadow: 0 4px 15px rgba(99, 102, 241, 0.4);
+}
+
+.btn-equals:hover {
+  background: linear-gradient(135deg, #4f46e5, #4338ca);
+  box-shadow: 0 6px 20px rgba(99, 102, 241, 0.6);
+}
+
+@media (max-width: 400px) {
+  .calculator {
+    padding: 18px;
+    border-radius: 22px;
+  }
+  
+  .current-operand {
+    font-size: 2rem;
+  }
+  
+  .keypad {
+    gap: 10px;
+  }
+  
+  .btn {
+    border-radius: 14px;
+    font-size: 1.15rem;
+  }
+}
